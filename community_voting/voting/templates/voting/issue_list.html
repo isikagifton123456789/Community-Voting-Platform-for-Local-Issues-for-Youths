@@ -1,0 +1,12 @@
+{% extends 'voting/base_generic.html' %}
+
+{% block content %}
+  <h1>Current Issues</h1>
+  <ul>
+    {% for issue in issues %}
+      <li>
+        <a href="{% url 'issue_detail' issue.pk %}">{{ issue.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

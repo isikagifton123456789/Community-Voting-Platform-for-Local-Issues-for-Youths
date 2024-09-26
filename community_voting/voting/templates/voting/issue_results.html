@@ -1,0 +1,8 @@
+{% extends 'voting/base_generic.html' %}
+
+{% block content %}
+  <h1>{{ issue.title }} - Results</h1>
+  <p>Total votes: {{ total_votes }}</p>
+  <p>Yes votes: {{ yes_votes }}</p>
+  <p>No votes: {{ no_votes }}</p>
+{% endblock %}

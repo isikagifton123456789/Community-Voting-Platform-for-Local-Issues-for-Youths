@@ -1,0 +1,18 @@
+{% extends 'voting/base_generic.html' %}
+
+{% block content %}
+  <h1>{{ issue.title }}</h1>
+  <p>{{ issue.description }}</p>
+  <p>Created on: {{ issue.created_at }}</p>
+
+  <form method="post" action="{% url 'vote' issue.pk 1 %}">
+    {% csrf_token %}
+    <button type="submit">Yes</button>
+  </form>
+  <form method="post" action="{% url 'vote' issue.pk 0 %}">
+    {% csrf_token %}
+    <button type="submit">No</button>
+  </form>
+
+  <a href="{% url 'issue_results' issue.pk %}">View Results</a>
+{% endblock %}
